@@ -1,0 +1,10 @@
+#server
+
+import socket
+
+sk = socket.socket()
+sk.bind(("127.0.0.1",8080))   #绑定本地ip，端口
+sk.listen(5)   #最多监听客户端connect的数目
+
+conn,address = sk.accept()
+sk.sendall(bytes("Hello world",encoding="utf-8"))
